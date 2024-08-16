@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="394.0" prefWidth="565.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashFormController">
+   <ImageView fitHeight="406.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+      <Image url="@../images/DashFormBackground.jpg" />
+   </ImageView>
+   <JFXButton fx:id="btnAddCustomerForm" layoutX="341.0" layoutY="50.0" onAction="#btnAddCustomerFormOnAction" prefHeight="26.0" prefWidth="210.0" style="-fx-background-color: #512204;" text="Add Customer" textFill="#ffabf5">
+      <font>
+         <Font name="Calibri Bold" size="18.0" />
+      </font>
+   </JFXButton>
+   <JFXButton fx:id="btnUpdateCustomerForm" layoutX="341.0" layoutY="116.0" onAction="#btnUpdateCustomerFormOnAction" prefHeight="26.0" prefWidth="210.0" style="-fx-background-color: #512204;" text="Update Customer" textFill="#ffabf5">
+      <font>
+         <Font name="Calibri Bold" size="18.0" />
+      </font>
+   </JFXButton>
+   <JFXButton fx:id="btnDeleteCustomerForm" layoutX="342.0" layoutY="182.0" onAction="#btnDeleteCustomerFormOnAction" prefHeight="26.0" prefWidth="210.0" style="-fx-background-color: #512204;" text="Delete Customer" textFill="#ffabf5">
+      <font>
+         <Font name="Calibri Bold" size="18.0" />
+      </font>
+   </JFXButton>
+   <JFXButton fx:id="btnSearchCustomerForm" layoutX="342.0" layoutY="250.0" onAction="#btnSearchCustomerFormOnAction" prefHeight="26.0" prefWidth="210.0" style="-fx-background-color: #512204;" text="Search Customer" textFill="#ffabf5">
+      <font>
+         <Font name="Calibri Bold" size="18.0" />
+      </font>
+   </JFXButton>
+   <JFXButton fx:id="btnViewAllForm" layoutX="342.0" layoutY="322.0" onAction="#btnViewAllFormOnAction" prefHeight="26.0" prefWidth="210.0" style="-fx-background-color: #512204;" text="View All" textFill="#ffabf5">
+      <font>
+         <Font name="Calibri Bold" size="18.0" />
+      </font>
+   </JFXButton>
+</AnchorPane>
