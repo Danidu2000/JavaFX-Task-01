@@ -50,6 +50,12 @@ public class SearchCustomerFormController {
             alert.setHeaderText("Your searched nothing");
             alert.setContentText("please enter valid customer ID.");
             alert.showAndWait();
+
+            lblID.setText(null);
+            lblName.setText(null);
+            lblAddress.setText(null);
+            lblNumber.setText(null);
+            lblDob.setText(null);
         }else if (foundCustomer != null) {
             lblID.setText(foundCustomer.getId());
             lblName.setText(foundCustomer.getTitle()+foundCustomer.getName());
@@ -65,9 +71,25 @@ public class SearchCustomerFormController {
             alert.setContentText("please check the ID or search different ID.");
             alert.showAndWait();
 
+            txtSearchID.setText("");
+            lblID.setText(null);
+            lblName.setText(null);
+            lblAddress.setText(null);
+            lblNumber.setText(null);
+            lblDob.setText(null);
         }
+    }
 
+    @FXML
+    void btnClearOnAction() {
+        txtSearchID.setText("");
+        lblID.setText(null);
+        lblName.setText(null);
+        lblAddress.setText(null);
+        lblNumber.setText(null);
+        lblDob.setText(null);
 
+        foundCustomer = null;
     }
 
 }
