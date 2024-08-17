@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="392.0" prefWidth="584.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DeleteCustomerFormController">
+<AnchorPane prefHeight="364.0" prefWidth="595.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DeleteCustomerFormController">
    <children>
-      <ImageView fitHeight="413.0" fitWidth="601.0" layoutY="-9.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="401.0" fitWidth="603.0" layoutX="-7.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/DeleteCustomerFormBackground.jpg" />
          </image>
@@ -31,7 +31,7 @@
          <font>
             <Font name="Calibri Bold" size="14.0" />
          </font></Label>
-      <Label fx:id="lblAddress" layoutX="162.0" layoutY="216.0" prefHeight="26.0" prefWidth="218.0">
+      <Label fx:id="lblAddress" layoutX="162.0" layoutY="225.0" prefHeight="26.0" prefWidth="218.0">
          <font>
             <Font name="Calibri Bold" size="14.0" />
          </font></Label>
@@ -43,7 +43,7 @@
          <font>
             <Font name="Calibri Bold" size="14.0" />
          </font></Label>
-      <JFXButton fx:id="btnDeleteCustomer" layoutX="293.0" layoutY="321.0" onAction="#btnDeleteCustomerOnAction" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: #006caa;" text="DELETE" textFill="WHITE">
+      <JFXButton fx:id="btnDeleteCustomer" layoutX="293.0" layoutY="321.0" onAction="#btnDeleteCustomerOnAction" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: #006caa;" text="Delete" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="14.0" />
          </font></JFXButton>
@@ -72,5 +72,10 @@
             <Font name="Calibri Bold" size="14.0" />
          </font>
       </Label>
+      <JFXButton fx:id="btnDeleteCustomer1" layoutX="197.0" layoutY="321.0" onAction="#btnClearOnAction" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: #006caa;" text="Clear" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="14.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

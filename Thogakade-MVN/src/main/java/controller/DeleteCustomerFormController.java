@@ -18,6 +18,8 @@ public class DeleteCustomerFormController {
 
     private Customer foundCustomer = null;
 
+    private Customer foundCustomerForProcess = null;
+
     private final List<Customer> customerList = ThogakadePOS.getInstance().getConnection();
 
     @FXML
@@ -51,6 +53,7 @@ public class DeleteCustomerFormController {
         for (Customer customer : customerList) {
             if (customer.getId().equals(id)) {
                 foundCustomer = customer;
+                foundCustomerForProcess = customer;
                 break;
             }
         }
@@ -60,6 +63,12 @@ public class DeleteCustomerFormController {
             alert.setHeaderText("Your search did not return any results!");
             alert.setContentText("please enter valid customer ID.");
             alert.showAndWait();
+
+            lblID.setText(null);
+            lblName.setText(null);
+            lblAddress.setText(null);
+            lblNumber.setText(null);
+            lblDob.setText(null);
 
         }else if (foundCustomer != null) {
             lblID.setText(foundCustomer.getId());
@@ -79,12 +88,19 @@ public class DeleteCustomerFormController {
             alert.setContentText("please check the ID or search different ID.");
             alert.showAndWait();
 
+            lblID.setText(null);
+            lblName.setText(null);
+            lblAddress.setText(null);
+            lblNumber.setText(null);
+            lblDob.setText(null);
+            txtSearchID.setText("");
+
         }
     }
 
     @FXML
     void btnDeleteCustomerOnAction() {
-        customerList.remove(foundCustomer);
+        customerList.remove(foundCustomerForProcess);
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Delete Success");
@@ -92,12 +108,27 @@ public class DeleteCustomerFormController {
         alert.setContentText("The customer successfully deleted.");
         alert.showAndWait();
 
-        lblID.setText("");
-        lblName.setText("");
-        lblAddress.setText("");
-        lblNumber.setText("");
-        lblDob.setText("");
-        txtSearchID.setText(null);
+        lblID.setText(null);
+        lblName.setText(null);
+        lblAddress.setText(null);
+        lblNumber.setText(null);
+        lblDob.setText(null);
+        txtSearchID.setText("");
+
+        btnDeleteCustomer.setDisable(true);
+    }
+
+    @FXML
+    void btnClearOnAction(ActionEvent event) {
+        lblID.setText(null);
+        lblName.setText(null);
+        lblAddress.setText(null);
+        lblNumber.setText(null);
+        lblDob.setText(null);
+        txtSearchID.setText("");
+
+        foundCustomer = null;
+        foundCustomerForProcess = null;
 
         btnDeleteCustomer.setDisable(true);
     }

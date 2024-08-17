@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="466.0" prefWidth="684.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UpdateCustomerFormController">
    <children>
       <ImageView fitHeight="467.0" fitWidth="697.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
@@ -23,7 +22,7 @@
             <Font name="Calibri Bold" size="14.0" />
          </font>
       </JFXTextField>
-      <JFXButton layoutX="326.0" layoutY="90.0" onAction="#btnSearchOnAction" prefHeight="26.0" prefWidth="83.0" style="-fx-background-color: #6a50b3;" text="Search" textFill="#97a8c2">
+      <JFXButton layoutX="326.0" layoutY="90.0" onAction="#btnSearchOnAction" prefHeight="26.0" prefWidth="83.0" style="-fx-background-color: #6a50b3;" text="Search" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="14.0" />
          </font>
@@ -50,7 +49,10 @@
             <Font name="Calibri Bold" size="14.0" />
          </font>
       </Label>
-      <JFXButton fx:id="btnUpdateCustomer" layoutX="334.0" layoutY="401.0" onAction="#btnUpdateCustomerOnAction" prefHeight="26.0" prefWidth="74.0" style="-fx-background-color: #6a50b3;" text="Update" textFill="#97a8c2" />
+      <JFXButton fx:id="btnUpdateCustomer" layoutX="334.0" layoutY="401.0" onAction="#btnUpdateCustomerOnAction" prefHeight="26.0" prefWidth="74.0" style="-fx-background-color: #6a50b3;" text="Update" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="14.0" />
+         </font></JFXButton>
       <Label layoutX="95.0" layoutY="130.0" prefHeight="26.0" prefWidth="119.0" text="ID">
          <font>
             <Font name="Calibri Bold" size="14.0" />
@@ -81,5 +83,10 @@
             <Font name="Calibri Bold" size="14.0" />
          </font>
       </Label>
+      <JFXButton fx:id="btnUpdateCustomer1" layoutX="247.0" layoutY="401.0" onAction="#btnClearOnAction" prefHeight="26.0" prefWidth="74.0" style="-fx-background-color: #6a50b3;" text="Clear" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="14.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

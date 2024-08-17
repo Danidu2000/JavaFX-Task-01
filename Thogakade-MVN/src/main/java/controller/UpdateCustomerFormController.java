@@ -21,6 +21,8 @@ public class UpdateCustomerFormController implements Initializable {
 
     private Customer foundCustomer = null;
 
+    private Customer foundCustomerForProcess = null;
+
     private final List<Customer> customerList = ThogakadePOS.getInstance().getConnection();
 
     @FXML
@@ -60,6 +62,7 @@ public class UpdateCustomerFormController implements Initializable {
         for (Customer customer : customerList) {
             if (customer.getId().equals(id)) {
                 foundCustomer = customer;
+                foundCustomerForProcess = customer;
                 break;
             }
         }
@@ -70,6 +73,13 @@ public class UpdateCustomerFormController implements Initializable {
             alert.setContentText("please enter valid customer ID.");
             alert.showAndWait();
 
+            lblID.setText(null);
+            cmbTitle.setValue(null);
+            txtName.setText(null);
+            txtAddress.setText(null);
+            txtNumber.setText(null);
+            dateDob.setValue(null);
+
         }else if (foundCustomer != null) {
             lblID.setText(foundCustomer.getId());
             cmbTitle.setValue(foundCustomer.getTitle());
@@ -77,6 +87,8 @@ public class UpdateCustomerFormController implements Initializable {
             txtAddress.setText(foundCustomer.getAddress());
             txtNumber.setText(foundCustomer.getNumber());
             dateDob.setValue(foundCustomer.getDob());
+
+            foundCustomer = null;
 
             btnUpdateCustomer.setDisable(false);
 
@@ -87,22 +99,54 @@ public class UpdateCustomerFormController implements Initializable {
             alert.setContentText("please check the ID or search different ID.");
             alert.showAndWait();
 
+            txtSearchID.setText("");
+            lblID.setText(null);
+            cmbTitle.setValue(null);
+            txtName.setText(null);
+            txtAddress.setText(null);
+            txtNumber.setText(null);
+            dateDob.setValue(null);
+
         }
     }
 
     @FXML
     void btnUpdateCustomerOnAction() {
-        foundCustomer.setTitle(cmbTitle.getValue());
-        foundCustomer.setName(txtName.getText());
-        foundCustomer.setAddress(txtAddress.getText());
-        foundCustomer.setNumber(txtNumber.getText());
-        foundCustomer.setDob(dateDob.getValue());
+        foundCustomerForProcess.setTitle(cmbTitle.getValue());
+        foundCustomerForProcess.setName(txtName.getText());
+        foundCustomerForProcess.setAddress(txtAddress.getText());
+        foundCustomerForProcess.setNumber(txtNumber.getText());
+        foundCustomerForProcess.setDob(dateDob.getValue());
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Update Success");
         alert.setHeaderText("SUCCESS!");
         alert.setContentText("The customer successfully updated.");
         alert.showAndWait();
+
+        txtSearchID.setText("");
+        lblID.setText(null);
+        cmbTitle.setValue(null);
+        txtName.setText(null);
+        txtAddress.setText(null);
+        txtNumber.setText(null);
+        dateDob.setValue(null);
+
+        btnUpdateCustomer.setDisable(true);
+    }
+
+    @FXML
+    void btnClearOnAction() {
+        txtSearchID.setText("");
+        lblID.setText(null);
+        cmbTitle.setValue(null);
+        txtName.setText(null);
+        txtAddress.setText(null);
+        txtNumber.setText(null);
+        dateDob.setValue(null);
+
+        foundCustomer = null;
+        foundCustomerForProcess = null;
 
         btnUpdateCustomer.setDisable(true);
     }
