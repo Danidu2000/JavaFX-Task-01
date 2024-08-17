@@ -56,6 +56,8 @@ public class SearchCustomerFormController {
             lblAddress.setText(foundCustomer.getAddress());
             lblNumber.setText(foundCustomer.getNumber());
             lblDob.setText(String.valueOf(foundCustomer.getDob()));
+
+            foundCustomer = null;
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Search Error");

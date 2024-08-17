@@ -68,6 +68,8 @@ public class DeleteCustomerFormController {
             lblNumber.setText(foundCustomer.getNumber());
             lblDob.setText(String.valueOf(foundCustomer.getDob()));
 
+            foundCustomer = null;
+
             btnDeleteCustomer.setDisable(false);
 
         } else {
